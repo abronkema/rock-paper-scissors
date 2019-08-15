@@ -12,6 +12,10 @@
       function computerPlay() {
         return options[Math.floor(Math.random() * options.length)];
       }
+      function playRound(playerSelection, computerSelection) {
+        computerSelection = computerPlay();
+        console.log(playerSelection, computerSelection);
+      }
     </script>
   </body>
 </html>
