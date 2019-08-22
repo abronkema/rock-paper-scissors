@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#selection {
+  border: 1px solid black;
+  width: 100%;
+}
+#results {
+  border: 1px solid black;
+  width: 100%;
+}
+#score {
+  border: 1px solid black;
+  width: 100%;
+}
