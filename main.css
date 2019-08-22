@@ -39,6 +39,26 @@ main {
 #results {
   width: 100%;
   text-align: center;
+}
+
+#picks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+  font-size: 2rem;
+}
+
+#player-pick {
+  width: 50%;
+}
+
+#computer-pick {
+  width: 50%;
+}
+
+#results-message {
+  width: 100%;
   font-size: 2rem;
 }
 #score {
