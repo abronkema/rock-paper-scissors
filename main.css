@@ -39,7 +39,7 @@ main {
 #results {
   width: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
 }
 #score {
   border: 1px solid black;

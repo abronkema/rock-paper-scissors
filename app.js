@@ -1,5 +1,9 @@
 let computerScore, playerScore;
-let resultsDisplaySection = document.getElementById("results");
+const playerPicksDisplaySection = document.getElementById("player-pick");
+const computerPicksDisplaySection = document.getElementById("computer-pick");
+const resultsMessageDisplaySection = document.getElementById("results-message");
+const scoreDisplaySection = document.getElementById("score");
+const playerSelectionButtons = document.querySelectorAll("button");
 
 let options = ["rock", "paper", "scissors"];
 function computerPlay() {
@@ -10,71 +14,66 @@ function resultMessage(result, playerSelection, computerSelection) {
   if (result == "win") {
     return `
     You won this round!
-    You drew: ${playerSelection}.
-    Computer drew: ${computerSelection}.
     `;
   } else if (result == "loss") {
     return `
     You lost this round!
-    You drew: ${playerSelection}.
-    Computer drew: ${computerSelection}.
     `;
   } else {
     return `
     That round was a draw.
-    You drew: ${playerSelection}.
-    Computer drew: ${computerSelection}.
     `;
   }
 }
 
 function playRound(playerSelection, computerSelection) {
   computerSelection = computerPlay();
-  console.log(`${playerSelection} and ${computerSelection}`);
+  playerPicksDisplaySection.innerHTML = playerSelection;
+  computerPicksDisplaySection.innerHTML = computerSelection;
   if (playerSelection == computerSelection) {
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "tie",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "rock" && computerSelection == "paper") {
     computerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "loss",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     playerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "win",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
     computerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "loss",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "paper" && computerSelection == "rock") {
     playerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "win",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
     computerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "loss",
       playerSelection,
       computerSelection
     ));
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     playerScore++;
-    return (resultsDisplaySection.innerHTML = resultMessage(
+    return (resultsMessageDisplaySection.innerHTML = resultMessage(
       "win",
       playerSelection,
       computerSelection
@@ -104,8 +103,6 @@ function game() {
     );
   }
 }
-
-let playerSelectionButtons = document.querySelectorAll("button");
 
 playerSelectionButtons.forEach(function(button) {
   button.addEventListener("click", function(el) {
