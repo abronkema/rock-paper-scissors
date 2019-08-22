@@ -37,8 +37,9 @@ main {
   height: 30px;
 }
 #results {
-  border: 1px solid black;
   width: 100%;
+  text-align: center;
+  font-size: 2em;
 }
 #score {
   border: 1px solid black;
