@@ -1,16 +1,40 @@
 body {
   display: flex;
   flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  justify-content: flex-start;
+  align-content: center;
+  /* height: 100vh; */
+}
+
+header {
+  font-size: 2em;
+  font-weight: 900;
+  text-align: center;
+  padding: 30px;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  justify-content: space-around;
 }
 
 #selection {
-  border: 1px solid black;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 1em;
+  flex-grow: 1;
+  margin: 1em;
+  height: 30px;
 }
 #results {
   border: 1px solid black;
