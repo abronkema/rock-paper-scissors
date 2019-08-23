@@ -58,6 +58,8 @@ function declareWinner() {
     winnerName = `Computer`;
   }
   resultsMessageDisplaySection.innerHTML = `Game Over. ${winnerName.toUpperCase()} wins!`;
+  playerPicksDisplaySection.innerHTML = "";
+  computerPicksDisplaySection.innerHTML = "";
 }
 
 function resetGame() {
