@@ -4,17 +4,22 @@ I'll be creating a Rock Paper Scissors game via JavaScript, according to [The Od
 
 ## Goals
 
-- ~~console-only for the initial part of this project~~
-- Transition console-only version to a simple UI game
+- Create a simple UI version of the original rock-paper-scissors (console only) version.
+- UI should be responsive (Flexbox)
+- Game should end at 5 points or when player selects "reset"
 
-## What I Did Well (from console-only version)
+## What I Did Well
 
-- I kept my functions to a single purpose. `options()` randomizes computer's selection, `resultMessage()` logs a clarifying message after each round, `playRound()` does exactly that, and the parts in the `game()` function make sense (`round`, `computerScore`, `playerScore` seem like they should all be scoped to the game)
+- I continued to keep functions mostly single-task oriented. It felt most rewarding, once the function was written, to call it where I needed it and move it around when troubleshooting.
+- The page is responsive, and no text overflows/overlaps on smaller screens (tested to iPhone X)
+- Semantic markup, where possible. There's on `<div>` in a `<section>` I probably need to refine.
 
-## What I Need To Improve (from console-only version)
+## What I Need To Improve
 
-- My code isn't really DRY. Especially `playRound()` where I'm using `console.log(resultMessage()` invocations at every step. There's gotta be a better way.
-- I hacked through this. I didn't pseudo-code ahead of time, so I spent a lot of time back-tracking and re-doing work.
+- Global scope seems unnecessarily polluted. `playerScore` and `computerScore` feel like they should be local.
+- There's a lot of `innerHTML` and I should try to find another option for replacing an element's text.
+- I feel like there should be a wrapping `game()` function that invokes all necessary functions and holds local variables to make a better/cleaner experience.
+- It's ugly. The styling is boring. There's not color. There are some places I need to add headers (Player/Computer Score, etc).
 
 ## Pseudocode
 
