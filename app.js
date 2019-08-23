@@ -4,7 +4,8 @@ const playerPicksDisplaySection = document.getElementById("player-pick");
 const computerPicksDisplaySection = document.getElementById("computer-pick");
 const resultsMessageDisplaySection = document.getElementById("results-message");
 const scoreDisplaySection = document.getElementById("score");
-const playerSelectionButtons = document.querySelectorAll("button");
+const playerSelectionButtons = document.querySelectorAll(".btn");
+const resetButton = document.querySelector(".reset");
 
 scoreDisplaySection.innerHTML = ` ${playerScore} - ${computerScore}`;
 
@@ -60,6 +61,9 @@ function declareWinner() {
   resultsMessageDisplaySection.innerHTML = `Game Over. ${winnerName.toUpperCase()} wins!`;
   playerPicksDisplaySection.innerHTML = "";
   computerPicksDisplaySection.innerHTML = "";
+  playerSelectionButtons.forEach(function(button) {
+    button.style.visibility = "hidden";
+  });
 }
 
 function resetGame() {
@@ -69,6 +73,9 @@ function resetGame() {
   computerScore = 0;
   playerScore = 0;
   updateScoreboard();
+  playerSelectionButtons.forEach(function(button) {
+    button.style.visibility = "visible";
+  });
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -100,8 +107,13 @@ function playRound(playerSelection, computerSelection) {
   }
   checkForWinner(playerScore, computerScore);
 }
+
 playerSelectionButtons.forEach(function(button) {
   button.addEventListener("click", function(el) {
     playRound(el.target.innerHTML.toLowerCase());
   });
+});
+
+resetButton.addEventListener("click", function(el) {
+  resetGame();
 });

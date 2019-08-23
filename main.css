@@ -32,7 +32,8 @@ main {
   justify-content: space-evenly;
 }
 
-.btn {
+.btn,
+.reset {
   border-radius: 5px;
   font-size: 1em;
   flex-grow: 1;
